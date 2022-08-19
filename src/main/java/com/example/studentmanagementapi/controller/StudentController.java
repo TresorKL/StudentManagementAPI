@@ -39,4 +39,10 @@ public class StudentController {
 
         return studentServiceInterface.deleteStudent(id);
     }
+
+    @PutMapping("/student/{id}")
+    public Student updateStudent(@PathVariable("id") Long id, @RequestBody Student student) {
+
+        return studentServiceInterface.updateStudent(id, student);
+    }
 }
