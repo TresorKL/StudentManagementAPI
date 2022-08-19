@@ -34,8 +34,21 @@ public class StudentServiceImpl implements StudentServiceInterface {
     }
 
     @Override
-    public Student deleteStudent(Long id) {
-        return null;
+    public String deleteStudent(Long id) {
+
+        String response=null;
+        Optional<Student> optionalStudent = studentRepository.findById(id);
+
+
+        if(optionalStudent.isPresent()){
+            Student student =studentRepository.findById(id).get();
+            studentRepository.delete(student);
+            response="Student successfully deleted";
+        }else {
+            response="Opps Student not found";
+        }
+
+        return  response;
     }
 
     @Override

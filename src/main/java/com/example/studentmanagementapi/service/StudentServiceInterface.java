@@ -14,7 +14,7 @@ public interface StudentServiceInterface {
 
     public List<Student> getAllStudents();
 
-    public Student deleteStudent(Long id);
+    public String deleteStudent(Long id);
 
     public Student updateStudent(Long id);
 

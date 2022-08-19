@@ -28,10 +28,15 @@ public class StudentController {
     }
 
     @GetMapping("/student/{id}")
-    public Student getStudent (@PathVariable("id") Long id){
+    public Student getStudent(@PathVariable("id") Long id) {
 
-        return  studentServiceInterface.getStudentById(id).get();
+        return studentServiceInterface.getStudentById(id).get();
+    }
+
+    @DeleteMapping("/student/{id}")
+    public String deleteStudent(@PathVariable("id") Long id) {
 
 
+        return studentServiceInterface.deleteStudent(id);
     }
 }
