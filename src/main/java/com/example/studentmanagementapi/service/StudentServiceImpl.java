@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentServiceInterface{
+public class StudentServiceImpl implements StudentServiceInterface {
 
     @Autowired
     StudentRepository studentRepository;
@@ -17,8 +17,7 @@ public class StudentServiceImpl implements StudentServiceInterface{
     public Student createStudent(Student student) {
 
 
-
-        return  studentRepository.save(student);
+        return studentRepository.save(student);
     }
 
     @Override
@@ -28,7 +27,7 @@ public class StudentServiceImpl implements StudentServiceInterface{
 
     @Override
     public List<Student> getAllStudents() {
-        return null;
+        return studentRepository.findAll();
     }
 
     @Override
